@@ -1,0 +1,355 @@
+// site header and navigation styles
+
+
+$core-nav-height: 70px;
+$site-nav-height: 70px;
+$site-header-height: ($core-nav-height + $site-nav-height);
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-nav-upper;
+  height: $site-header-height;
+  &__offset:before {
+    // corrects header overlapping content. must
+    content: '';
+    display: block;
+    height: $site-header-height;
+  }
+}
+
+
+// ---------- NAV FOR CORE SE SITE ----------
+
+.core-nav {
+  font-family: $core-font-family;
+  color: $white;
+  text-align: center;
+  background-color: $black-75;
+  * { vertical-align: middle; }
+  & > .row--padding {
+    padding-left: ( $margin / 1.25 );
+    padding-right: ( $margin / 1.25 );
+  }
+  &__wrap {
+    position: relative;
+    display: table;
+    height: $core-nav-height;
+    width: 100%;
+  }
+  &__column {
+    position: absolute;
+    &--left {
+      padding-top: 1em;
+      .csstransforms.csstransforms3d & {
+        top: 50%;
+        padding-top: 0;
+        transform: translateY(-50%);
+      }
+    }
+    &--center {
+      width: 60%;
+      padding-top: 1em;
+      .csstransforms.csstransforms3d & {
+        top: 50%;
+        left: 50%;
+        padding-top: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &--right {
+      display: none;
+    }
+    @include bp(medium){
+      &--center{ width: auto; }
+    };
+    @include bp( xxlarge ){
+      &--right {
+        right: 0;
+        display: block;
+        padding-top: 1em;
+        .csstransforms.csstransforms3d & {
+          top: 50%;
+          right: 0;
+          width: auto;
+          padding-top: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    @include bp( xxlarge ){
+      &--left {
+        display: none;
+      }
+      &--center {
+        left: 0;
+        width: auto;
+        .csstransforms.csstransforms3d & {
+          top: 50%;
+          left: 0;
+          width: auto;
+          padding-top: 0;
+          transform: translateY(-50%);
+        }
+      }
+    };
+  }
+  &__divider {
+    display: none;
+    height: ($core-nav-height / 1.5);
+    width: 1em;
+    @include bp( xxlarge ){
+      display: inline-block;
+    }
+  }
+  &__list {
+    display: none;
+    text-transform: uppercase;
+    font-size: .833em;
+    font-weight: 700;
+    @include bp( xxlarge ){
+      display: inline-block;
+    }
+  }
+  &__item {
+    display: inline-block;
+    & + & {
+      margin-left: 1em;
+    }
+  }
+  &__link {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    @include transition;
+    &:hover,
+    &--current {
+      color: $se-orange;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// ---------- NAV FOR MICROSITE ----------
+
+$nav-arrow-width: 66px;
+
+.site-nav {
+  height: ($site-nav-height/1.4);
+  font-family: $core-font-family;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .225em;
+  line-height: (($site-nav-height/1.4)+1);
+  text-transform: uppercase;
+  background-color: #232833;
+  background-color: rgba(#232833,.85);
+  overflow: hidden;
+  &__list {
+    padding-right: $nav-arrow-width;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    &:before {
+      // prompt for horizontal scroll on phone
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: $z-nav-upper;
+      display: block;
+      width: $nav-arrow-width;
+      height: ($site-nav-height/1.4);
+      background-image: url("../img/icons/nav-arrow-dark.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: $nav-arrow-width auto;
+    }
+    @include bp(medium){
+      // remove the prompt for sideways scroll
+      padding-right: 0;
+      overflow: visible;
+      &:before { display: none; }
+    }
+  }
+  &__item {
+    display: inline-block;
+    white-space: nowrap;
+    border-left: .5px solid rgba($white,.15);
+    @include transition;
+    &:last-of-type { border-right: .5px solid rgba($white,.15); }
+    &--flights { background-color: #0e1c3a; }
+    &:hover {
+      background-color: #0e121b;
+      border-color: #0e121b;
+    }
+    // changes neighbour item border
+    &:hover + & { border-color: #0e121b; }
+  }
+  &__link {
+    display: inline-block;
+    padding-left: 2em;
+    padding-right: 2em;
+    &:hover,
+    &--current { text-decoration: none; }
+  }
+  @include bp(medium){
+    height: $site-nav-height;
+    line-height: ($site-nav-height+1);
+    .flexbox & {
+      &__list {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+      }
+      &__item { flex-grow: 1; }
+      &__link {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+// ---------- MOBILE NAV OFF CANVAS ----------
+
+$mobile-nav-width: 75%;
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: $z-overlay;
+  width: $mobile-nav-width;
+  color: $white;
+  font-family: $core-font-family;
+  background-color: $se-dark-grey-85;
+  overflow-y: auto;
+  @include transition;
+  &.is-closed {
+    left: -$mobile-nav-width;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.is-open {
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+  &__list {
+    border-top: 1px solid $black-33;
+    border-bottom: 1px solid $black-33;
+  }
+  &__item {
+    list-style: none;
+    & + & { border-top: 1px solid $black-33; }
+  }
+  &__link {
+      @include transition;
+      display: block;
+      padding-top: .694em;
+      padding-bottom: .694em;
+      font-size: 1em;
+      font-weight: 700;
+      text-transform: uppercase;
+      &:hover {
+        color: $se-orange;
+        background-color: $se-dark-grey-33;
+        text-decoration: none;
+      }
+      &--current { color: $se-orange; }
+  }
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    background: $se-dark-grey-85;
+    text-align: center;
+     > * {
+       padding-top: .5em;
+       padding-bottom: .5em;
+       vertical-align: middle;
+     }
+    @include bp-vertical {
+      position: static;
+    }
+    @include bp(xxlarge){
+      display: none;
+    }
+  }
+  @include bp(xxlarge){
+    display: none;
+  }
+}
+
+
+// ---------- SITE FOOTER ----------
+.footer {
+  background-color: $black-85;
+  &__logos {
+    font-size: .9em;
+    border-top: 1px solid $white-15;
+    padding-top: $margin;
+    padding-bottom: $margin;
+  }
+  .logo {
+    vertical-align: middle;
+    margin-left: ($margin/4);
+    margin-right: ($margin/4);
+  }
+  p { margin-top: .5em; }
+  .logo--secret-escapes { max-width: 110px; }
+  .logo--partner { max-width: 125px; }
+  .logo--new-orleans { max-width: 100px; }
+  .logo--partner + .logo--partner { margin-left: .5em; }
+}
+
+
+// ---------- ICONS ----------
+
+$icon-size: 27px;
+.icon {
+  display: inline-block;
+  height: $icon-size;
+  width: $icon-size;
+  cursor: pointer;
+  vertical-align: middle;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $icon-size;
+  &--menu {
+    background-image: url("../img/icons/menu.png");
+    svg & { background-image: url("../img/icons/menu.svg"); }
+  }
+  &--close {
+    background-image: url("../img/icons/close.png");
+    svg & { background-image: url("../img/icons/close.svg"); }
+  }
+}
+
+
+// ---------- LOGOS ----------
+
+.logo {
+  display: inline-block;
+  &--secret-escapes {
+    max-width: 180px;
+    padding-top: 4px;
+    .footer__logos & {
+      margin-top: -2px;
+    }
+  }
+  &--partner {
+    max-width: 165px;
+    & + & {
+      margin-left: 1.5em;
+    }
+  }
+}
