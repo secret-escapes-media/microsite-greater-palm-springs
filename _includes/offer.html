@@ -1,6 +1,6 @@
 <div class="offer">
 
-  <a class="offer__link" href="{{ offer.link }}"><span class="btn btn--orange">View Offer</span></a>
+  <a id="tracking-offer-{{offer.title | slugify}}" class="offer__link" href="{{ offer.link }}"><span class="btn btn--orange">View Offer</span></a>
 
   <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{ site.baseurl }}/img/offers/{% if offer.slug %}{{offer.slug}}{% else %}{{offer.title | slugify}}{% endif %}.jpg')">
   </div>
@@ -16,7 +16,7 @@
           <span class="p--small">Save up to</span> <span class="offer__saved-num">{{ offer.saved }}%</span>
         </div>
         <div class="offer__details">
-          <div class="p--small">From <span class="offer__price">£{{ offer.price }}</span></div>
+          <div class="p--small">From <span class="offer__price">${{ offer.price }}</span></div>
           <div class="p--small">{{ offer.price-description }}</div>
           <div class="js-offer-expires p--small" data-expires="{{ offer.expires }}"></div>
         </div>

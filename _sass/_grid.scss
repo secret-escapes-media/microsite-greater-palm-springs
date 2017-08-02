@@ -15,6 +15,13 @@ $margin: 2em;
 
 // -------- grid sections --------
 
+.space {
+  &--xl { margin-top: 3em; }
+  &--lg { margin-top: 2.5em; }
+  &--md { margin-top: 2em; }
+  &--sm { margin-top: 1.5em; }
+}
+
 section {
   min-height: 100%;
   padding-top: 3.583em;

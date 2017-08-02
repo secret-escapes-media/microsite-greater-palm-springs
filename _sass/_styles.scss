@@ -6,12 +6,10 @@
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body { background-color: $black; }
-
 .banner {
   position: relative;
   height: 100%;
-  background-color: $grey-darker;
+  background-color: #75919c;
   text-align: center;
   background-image: url('../img/bg/intro.jpg');
   @include background-attributes;
@@ -23,7 +21,6 @@ body { background-color: $black; }
     right: 0;
     z-index: $z-content;
     width: 100%;
-    // max-width: $xlarge;
     margin: auto;
     padding-top: 30vh;
     .csstransforms.csstransforms3d & {
@@ -50,15 +47,8 @@ body { background-color: $black; }
 
 .section {
   position: relative;
-  background-color: $grey-darker;
+  background-color: #e9f1f3;
   @include background-attributes;
-  &#flights {
-    padding-bottom: 30em;
-    padding-bottom: 27vw;
-    background-color: #052448;
-    background: url('../img/bg/flights-plane.png') center bottom / 100% auto no-repeat,
-                url('../img/bg/flights-gradient.jpg') center / cover no-repeat;
-  }
   &:before {
     // offset for the overlapping sticky header
     content: '';
@@ -70,7 +60,7 @@ body { background-color: $black; }
   }
   &#offers {
     min-height: auto;
-    background-color: #2b323b;
+    background-color: #d5dce1;
     background-image: url('../img/bg/offers.jpg');
     background-position: top center;
     background-repeat: no-repeat;
@@ -97,16 +87,6 @@ body { background-color: $black; }
     .flexbox & {
       display: flex;
       align-items: center;
-    }
-  }
-  #flights & {
-    max-width: $xxlarge;
-    margin-left: auto;
-    margin-right: auto;
-    @include bp(xxlarge){
-      &__text  { @include span(last 7); }
-      &__image { @include span(5); }
-      .flexbox & { flex-direction: row-reverse; }
     }
   }
 }
@@ -142,8 +122,9 @@ body { background-color: $black; }
   margin-right: auto;
   padding: $margin ($margin/1.75);
   text-align: center;
+  color: $gps-blue;
   border-radius: 3px;
-  box-shadow: inset 0px 0px 200px 0px rgba($white, .25);
+  box-shadow: inset 0px 0px 350px 0px $white;
   @include bp(large){
     padding-left: $margin;
     padding-right: $margin;
@@ -185,33 +166,6 @@ body { background-color: $black; }
   }
 }
 
-// $cta-size: 53px;
-// .mobile-cta {
-//   position: fixed;
-//   right: 1em;
-//   bottom: 1em;
-//   z-index: $z-overlay;
-//   display: block;
-//   height: $cta-size;
-//   width: $cta-size;
-//   background-color: $white;
-//   background-image: url(../img/icons/british-airways.png);
-//   .svg & { background-image: url(../img/icons/british-airways.svg); }
-//   background-position: 45% 52%;
-//   background-repeat: no-repeat;
-//   background-size: 75% auto;
-//   border-radius: $cta-size;
-//   box-shadow: 0px 8px 44px 0px rgba(13, 13, 13, 0.15);
-//   opacity: 0;
-//   @include transition;
-//   &.is-active{
-//     opacity: 1;
-//   }
-//   @include bp(large){
-//     display: none;
-//   }
-// }
-
 
 // ---------- button ----------
 
@@ -230,16 +184,9 @@ body { background-color: $black; }
     font-size: .867em;
   }
   * + & { margin-top: 1em; }
-  &--outline  {
-    border: 1px solid rgba($white,.66);
-  }
-  &--dark     {
-    background-color: rgba(#232833,.4);
-    &:hover { background-color: rgba(#232833,.85); }
-  }
-  &--red {
-    background-color: #ce210f;
-    &:hover { background-color: #b51100; }
+  &--turquoise {
+    background-color: rgba($gps-turquoise,.8);
+    &:hover { background-color: $gps-turquoise; }
   }
   &--orange {
     background-color: $se-orange;
@@ -250,6 +197,7 @@ body { background-color: $black; }
 
 .offer-promo {
   position: relative;
+  color: $white;
   background-color: rgba($grey-darker,.85);
   min-height: auto;
   &__bgs {

@@ -7,9 +7,9 @@
       {% for topic in page.topics %}
       {% for poi in topic.pois %}
       <div class="modal__content modal__content--{{poi.title | slugify}}" data-content-category="{{topic.id}}">
-        <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image:url('{{site.baseurl}}/img/content/{{topic.id}}/pois/{% if poi.slug %}{{poi.slug}}{% else %}{{poi.title | slugify}}{% endif %}.jpg')">{% if poi.image-credit %}<span class="bg-image-ratio__credit js-image-credit">{{poi.image-credit}}</span>{% endif %}</div>
+        <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image:url('{{site.baseurl}}/img/content/{{topic.id}}/pois/{% if poi.slug %}{{poi.slug}}{% else %}{{poi.title | slugify}}{% endif %}.jpg')"></div>
         <div class="modal__content--padding">
-          <h2 class="title title--smaller title--light align-center">{{poi.title}}</h2>
+          <h2 class="title title--core title--small title--light align-center">{{poi.title}}</h2>
           <p>{{poi.description}}</p>
         </div>
       </div>

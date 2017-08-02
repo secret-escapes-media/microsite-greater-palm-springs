@@ -29,9 +29,6 @@
     $('html').addClass('touch');
   }
 
-  // fit text for the main title
-  // $('.js-fit-text').fitText(0.75);
-
 
 ///////////////////////////////////////
 //        Navigation
@@ -77,22 +74,6 @@ $(window).scroll(function(){
       $(this).attr('src', newSrc);
     });
   }
-
-
-// ///////////////////////////////////////
-// //      Parallax
-// //      [ example: <div class="parallax" data-parallax-speed="0.2"> ]
-// ///////////////////////////////////////
-//
-//   $(document).scroll(function(){
-//     var scrolled = $(document).scrollTop();
-//     $('.parallax').each(function(){
-//       var speed = $(this).attr('data-parallax-speed');
-//       var offset = $(this).offset();
-//       var parallax = -(scrolled - offset.top) * speed ;
-//       $(this).css('background-position', 'center ' + parallax + 'px');
-//     });
-//   });
 
 
 ///////////////////////////////////////
@@ -224,43 +205,24 @@ $(window).scroll(function(){
 
 
 ///////////////////////////////////////
-//    Mobile CTA - waypoints
+//       Offer expiry countdown
 ///////////////////////////////////////
 
-// // not sure of a cleaner way to write this and I dont want to trawl through the
-// // terrible docs to find out
-//
-//   // shows mobile cta when past the start of food section
-//   var waypoint = new Waypoint({
-//     element: document.getElementById('dining'),
-//     handler: function() {
-//       $('.mobile-cta').toggleClass('is-active');
-//     },
-//     offset: 10
-//   });
-//
-//   // hides mobile cta when in the flights section it links to
-//   var fucky = new Waypoint({
-//     element: document.getElementById('offers'),
-//     handler: function() {
-//       $('.mobile-cta').toggleClass('is-active');
-//     },
-//     offset: 10
-//   });
-
-
-///////////////////////////////////////
-//    Expand image credit
-///////////////////////////////////////
-
-$('.js-image-credit').each(function() {
-  // grab the credit text
-  var imageCredit = $(this).html();
-  // remove credit text and use a smaller label
-  $(this).html('Image Source').css('cursor', 'pointer');
-  // on click replace the label with the original credit text
-  $(this).on('click', function() {
-    $(this).html(imageCredit).css('cursor', 'auto');
+// loops through each offer on page and sets the current days remaining
+$('.js-offer-expires').each(function() {
+  // gets the expires date from the object
+  var expires = $(this).data('expires');
+  $(this).countdown(expires, function(event) {
+    if (event.elapsed) {
+      // the expired date is in the past so the expired message is removed
+      $(this).remove();
+    } else if (event.offset.totalDays === 0) {
+      // there is 0 days left, just hours, so ends today
+      $(this).html(event.strftime('Ending <strong>Today</strong>'));
+    } else {
+      // there are days left, outputs with either day or days
+      $(this).html(event.strftime('Ending in <strong>%-D day%!D</strong>'));
+    }
   });
 });
 

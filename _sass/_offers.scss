@@ -1,25 +1,27 @@
 // Offer block styles
 
+
 .offer {
   position: relative;
-  // GRID SHIZZ
-  max-width: $large;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: ($margin * 2);
-  color: $text-paragraph;
-  @include bp(xxlarge){
-    @include layout(12 1);
-    @include gallery(6);
-    margin-bottom: gutter(12);
-    // centers single offer
-    &:nth-child(odd):last-child{
-      margin-right: auto;
-      margin-left: auto;
-      float: none !important;
+  .offers & {
+    max-width: $large;
+    // GRID SHIZZ
+    @include bp(xxlarge){
+      @include layout(12 1);
+      @include gallery(6);
+      margin-bottom: gutter(12);
+      // centers single offer
+      &:nth-child(odd):last-child{
+        margin-right: auto;
+        margin-left: auto;
+        float: none !important;
+      }
     }
+    // END GRID SHIZZ
   }
-  // END GRID SHIZZ
   &__link {
     position: absolute;
     top: 0;
@@ -55,11 +57,9 @@
     }
   }
   &__content {
-    padding: $margin;
-    border-left: 1px solid $light-grey;
-    border-right: 1px solid $light-grey;
-    border-bottom: 1px solid $light-grey;
+    padding: ($margin/1.25) $margin ($margin/1.33);
     background-color: $white;
+    p { font-weight: 200; }
   }
   &__title {
     font-family: $main-font-family;
@@ -77,7 +77,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 600;
-    color: $text-paragraph;
+    color: $text-grey;
     &:before {
       content: "";
       display: inline-block;
@@ -97,13 +97,13 @@
   $circle-height: 50px;
   &__saved {
       display: table-cell;
+      width: 33.33%;
       padding-right: ($margin/1.5);
       line-height: 1.2;
       text-align: center;
-      border-right: 1px solid $light-grey;
-      vertical-align: bottom !important;
+      border-right: 1px solid $grey-lighter;
     &-num {
-      display: block;
+      display: inline-block;
       width: $circle-height;
       height: $circle-height;
       margin-top: .2em;
@@ -122,7 +122,7 @@
       padding-right: $margin;
     }
     @include bp(medium){
-      vertical-align: middle !important;
+      width: auto;
     }
   }
   &__details {
@@ -160,6 +160,7 @@
     @include bp(small){
       display: table;
       width: 100%;
+      margin-top: 1.5em;
       * { vertical-align: middle; }
       strong,
       span { vertical-align: baseline; }

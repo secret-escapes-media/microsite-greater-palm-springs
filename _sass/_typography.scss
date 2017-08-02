@@ -5,7 +5,7 @@
 
 $core-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 $main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-$title-font-family: 'Yeseva One', serif;
+$title-font-family: 'futura-pt', 'Futura', 'Helvetica Neue', sans-serif;
 
 html { font-size:62.5%; }
 body,
@@ -15,23 +15,24 @@ input, textarea, keygen, select, button {
   @include bp(medium) {
     font-size: 15px;
   }
-  color: $white;
+  color: $text-paragraph;
 }
 
 
 // -------- Headings --------
 
 .title {
-  font-weight: 200;
-  letter-spacing: .015em;
-  line-height: 1.15;
+  font-family: $title-font-family;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: .85;
   + * { margin-top: 1em; }
   &--margin-none + * { margin-top: 0; }
-
-  &--special {
-    font-family: $title-font-family;
+  &--core {
+    font-family: $main-font-family;
+    font-weight: 200;
     letter-spacing: -.033em;
-    line-height: .9;
+    line-height: 1.1;
   }
   &--spacing {
     * + & { margin-top: 15px; }
@@ -39,6 +40,7 @@ input, textarea, keygen, select, button {
   &--extra-margin { margin-top: 1.5em; }
   &--sub-heading  { margin-top: 0 !important; }
 
+  &--blue      { color: $gps-blue; }
   &--light     { font-weight: 200; }
   &--bold      { font-weight: 700; }
   &--expanded  { letter-spacing: .15em; }
@@ -49,30 +51,26 @@ input, textarea, keygen, select, button {
   &--upper     { text-transform: uppercase; }
   &--italic    { font-style: italic; }
 
-  &--largest {
-    font-size: 4.3em;
-    &-sub {
-      display: block;
-      font-size: .55em;
-    }
-  }
-  &--larger      { font-size: 2.986em; }
-  &--large       { font-size: 2.488em; }
-  &--medium      { font-size: 2.25em; }
-  &--small       { font-size: 1.5em; }
-  &--smaller     { font-size: 1.867em; }
+  &--largest     { font-size: 4em; }
+  &--larger      { font-size: 3.583em; }
+  &--large       { font-size: 3.583em; }
+  &--medium      { font-size: 2.986em; }
+  &--small       { font-size: 1.867em; }
+  &--smaller     { font-size: 1.44em; }
   &--smallest    { font-size: 1.2em; }
   &--tiny        { font-size: 1.1em; }
+  &--micro       { font-size: 1.05em; }
+  @include bp(small){
+    &--largest     { font-size: 5.16em; }
+  }
   @include bp(large){
-    &--small       { font-size: 1.867em; }
-    &--smallest    { font-size: 1.5em; }
-    &--tiny        { font-size: 1.44em; }
-    &--micro       { font-size: 1.2em; }
+    &--largest     { font-size: 6.192em; }
+    &--small       { font-size: 2.074em; }
   }
   @include bp(xxlarge){
-    &--largest     { font-size: 6.192em; }
-    &--larger      { font-size: 4em; }
-    &--large       { font-size: 2.986em; }
+    &--largest     { font-size: 8em; }
+    &--larger      { font-size: 5.16em; }
+    &--large       { font-size: 4em; }
     &--medium      { font-size: 2.933em; }
     &--small       { font-size: 2.467em; }
     &--smaller     { font-size: 2.25em; }
@@ -90,6 +88,11 @@ input, textarea, keygen, select, button {
     &--lead { font-size: 1.133em; }
     &--large { font-size: 1.2em; }
   }
+  &--small { font-size: .85em; }
+}
+
+.text {
+  &--white { color: $white; }
 }
 
 
