@@ -1,11 +1,20 @@
-# - title: The Westin Mission Hills Golf Resort & Spa
-#   location: Rancho Mirage, Greater Palm Springs, California
-#   description: A 360-acre golf, wellness, tennis and dining destination in the Greater Palm Springs region
-#   price: 99
-#   price-description: per room per night
-#   saved: 27
-#   expires: 2017/08/28
-#   link: https://us.secretescapes.com/westin-mission-hills-golf-resort-and-spa-rancho-mirage-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_westin_mission_hills
+- title: The Westin Mission Hills Golf Resort & Spa
+  location: Rancho Mirage, Greater Palm Springs, California
+  description: A 360-acre golf, wellness, tennis and dining destination in the Greater Palm Springs region
+  price: 99
+  price-description: per room per night
+  saved: 27
+  expires: 2017/08/28
+  link: https://us.secretescapes.com/westin-mission-hills-golf-resort-and-spa-rancho-mirage-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_westin_mission_hills
+
+- title: Chateau at Lake La Quinta
+  location: Lake La Quinta, Greater Palm Springs, California
+  description: A lake-view room or suite at an inviting boutique getaway in Greater Palm Springs
+  price: 119
+  price-description: per room per night
+  saved: 20
+  expires: 2017/08/21
+  link: https://us.secretescapes.com/lakeside-coachella-valley-boutique-hotel-chateau-at-lake-la-quinta-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_chateau_la_quinta
 
 - title: Renaissance Indian Wells Resort & Spa
   location: Indian Wells, Greater Palm Springs, California
@@ -25,14 +34,14 @@
   expires: 2017/08/28
   link: https://us.secretescapes.com/jw-marriott-desert-springs-resort-and-spa-palm-desert-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_jw_marriott_desert_springs
 
-# - title: Hyatt Regency Indian Wells Resort & Spa
-#   location: Indian Wells, Greater Palm Springs, California
-#   description: A golf resort with seven pools, a DesertPipe water adventure and a fantastic spa
-#   price: 125
-#   price-description: per room per night
-#   saved: 46
-#   expires: 2017/08/28
-#  link: https://us.secretescapes.com/hyatt-regency-indian-wells-resort-and-spa-indian-wells-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_hyatt_regency_indian_wells
+- title: Hyatt Regency Indian Wells Resort & Spa
+  location: Indian Wells, Greater Palm Springs, California
+  description: A golf resort with seven pools, a DesertPipe water adventure and a fantastic spa
+  price: 125
+  price-description: per room per night
+  saved: 46
+  expires: 2017/08/28
+  link: https://us.secretescapes.com/hyatt-regency-indian-wells-resort-and-spa-indian-wells-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_hyatt_regency_indian_wells
 
 - title: Convenient and modern Palm Springs suites
   location: Hyatt Palm Springs, Palm Springs, California
@@ -51,12 +60,3 @@
   saved: 47
   expires: 2017/08/21
   link: https://us.secretescapes.com/hip-getaway-in-sunny-palm-springs-saguaro-palm-springs-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_saguaro
-
-- title: Lakeside Coachella Valley boutique hotel
-  location: Chateau at Lake La Quinta, California
-  description: Contemporary boutique style in the Coachella Valley, at a freshly renovated hotel right next to a pretty lake
-  price: 119
-  price-description: per room per night
-  saved: 20
-  expires: 2017/08/21
-  link: https://us.secretescapes.com/lakeside-coachella-valley-boutique-hotel-chateau-at-lake-la-quinta-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_chateau
