@@ -1,44 +1,8 @@
-- title: Renaissance Indian Wells Resort & Spa
-  location: Indian Wells, Greater Palm Springs, California
-  description: Luxurious comfort in the Coachella Valley at a golf and spa resort with a sandy beach pool
-  price: 103
-  price-description: per room per night
-  saved: 20
-  expires: 2017/08/28
-  link: https://us.secretescapes.com/renaissance-indian-wells-resort-and-spa-indian-wells-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_renaissance_indian_wells
-
-- title: JW Marriott Desert Springs Resort & Spa
-  location: Palm Desert, Greater Palm Springs, California
-  description: A sprawling luxury golf and spa destination with waterways you can tour by boat
-  price: 127
-  price-description: per room per night
-  saved: 20
-  expires: 2017/08/28
-  link: https://us.secretescapes.com/jw-marriott-desert-springs-resort-and-spa-palm-desert-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_jw_marriott_desert_springs
-
-- title: Hyatt Regency Indian Wells Resort & Spa
-  location: Indian Wells, Greater Palm Springs, California
-  description: A golf resort with seven pools, a DesertPipe water adventure and a fantastic spa
-  price: 125
-  price-description: per room per night
-  saved: 46
-  expires: 2017/08/28
-  link: https://us.secretescapes.com/hyatt-regency-indian-wells-resort-and-spa-indian-wells-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_hyatt_regency_indian_wells
-
-- title: La Quinta Resort & Club, A Waldorf Astoria Resort
-  location: La Quinta, Greater Palm Springs, California
-  description: A deluxe casita at Waldorf Astoria’s only Palm Springs property, with resort credit and discounts
-  price: 189
-  price-description: per casita per night
-  saved: 47
-  expires: 2017/09/04
-  link: https://us.secretescapes.com/la-quinta-resort-and-club-a-waldorf-astoria-resort-la-quinta-greater-palm-springs-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_la_quinta_resort_and_club
-
-- title: Biggest Loser Resort Palm Desert
-  location: Palm Desert, Greater Palm Springs, California
-  description: A health and wellness destination in the Coachella Valley, with weight-loss guidance and support
-  price: 435
-  price-description: per room per night
-  saved: 10
-  expires: 2017/08/28
-  link: https://us.secretescapes.com/biggest-loser-resort-palm-desert-palm-desert-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_biggest_loser_resort
+# - title: Renaissance Indian Wells Resort & Spa
+#   location: Indian Wells, Greater Palm Springs, California
+#   description: Luxurious comfort in the Coachella Valley at a golf and spa resort with a sandy beach pool
+#   price: 103
+#   price-description: per room per night
+#   saved: 20
+#   expires: 2017/08/28
+#   link: https://us.secretescapes.com/renaissance-indian-wells-resort-and-spa-indian-wells-california/sale?utm_source=SE&utm_medium=Hub&utm_campaign=GPS_2017_renaissance_indian_wells
